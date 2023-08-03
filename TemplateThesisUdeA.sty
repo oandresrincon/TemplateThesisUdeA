@@ -1,0 +1,218 @@
+%--------------------------------------------------------------------------------------------------------------------------------
+%  Dimensiones del documento.
+%--------------------------------------------------------------------------------------------------------------------------------
+\usepackage[paperheight=240mm,
+			paperwidth=168mm,
+			left=19mm,
+			right=19mm,
+			top=30mm,
+			bottom=20mm,
+			headsep=11mm,
+			headheight=5mm,
+			centering]{geometry}		%--------------------------------------------------------------------------------------------------------------------------------
+% To include cut marks on a sheet of A4 size, uncomment the following line of code.
+%--------------------------------------------------------------------------------------------------------------------------------
+%\usepackage[a4,center,cam,noinfo]{crop}
+%--------------------------------------------------------------------------------------------------------------------------------
+%  Packages of the document.
+%--------------------------------------------------------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nosectiondot,es-lcroman]{babel}
+\usepackage{amsmath,amssymb,amsfonts} % Typical maths resource packages
+\usepackage{graphics}                 % Packages to allow inclusion of graphics
+\usepackage{color}                    % For creating coloured text and background
+\usepackage{hyperref}                 % For creating hyperlinks in cross references
+\usepackage{fancyhdr}    
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{lettrine}
+\usepackage{lipsum}
+\usepackage{mfirstuc} % << fot capitalisewords command
+\usepackage[many]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{regexpatch}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{bold-extra}
+
+%--------------------------------------------------------------------------------------------------------------------------------
+% Definition of the document colors. 
+%--------------------------------------------------------------------------------------------------------------------------------
+\definecolor{Gris}{RGB}{233,233,233}
+\definecolor{myGris}{RGB}{109,111,113}
+\definecolor{myGris2}{RGB}{211,210,210}
+\definecolor{myGris3}{RGB}{123,121,121}%Color títulos de Capítulos
+\definecolor{myGris4}{RGB}{189,188,188}%Color corchetes observaciones
+\definecolor{Grisheaders}{RGB}{88,89,91}
+\definecolor{Gray1}{RGB}{233,233,233}%Color of the box in the chapter title.
+\definecolor{Gray2}{RGB}{101,98,99}%%Color of word Capítulo and number in the table of content.
+\definecolor{Gray3}{RGB}{211,210,210}%Color of chapter number.
+\definecolor{Gray4}{RGB}{123,121,121}%Color of chapter titles.
+\definecolor{Gray5}{RGB}{189,188,188}%Color of brackets in observations.
+\definecolor{Gray6}{RGB}{33,30,30}%Color of brackets in observations.
+%--------------------------------------------------------------------------------------------------------------------------------
+\parindent 0cm
+%--------------------------------------------------------------------------------------------------------
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}{Algoritmo}[chapter]
+%\newtheorem{programa}{Programa}[chapter]{\textbf{#1.} }{}
+
+\newtheoremstyle{programa}% name
+  {}%      Space above
+  {}%      Space below
+  {}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {\vspace{1mm}#1 #2\thmnote{#3}}%         Thm head spec (can be left empty, meaning `normal')
+\theoremstyle{programa}
+\newtheorem{programa}{Programa}[chapter] 
+
+\newtheorem{axiom}{Axiom}[chapter]
+\newtheorem{case}{Case}[chapter]
+\newtheorem{claim}{Afirmaci\'on}[chapter]
+\newtheorem{conclusion}[theorem]{Conclusi\'on}
+\newtheorem{condition}[theorem]{Condici\'on}
+\newtheorem{conjecture}[theorem]{Conjetura}
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{criterion}[theorem]{Criterio}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{lemma}{Lema}[chapter]
+\newtheorem{notation}{Notaci\'on}[chapter]
+\newtheorem{problem}[theorem]{Problema}
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{remark}{Remark}[chapter]
+\newtheorem{solution}{Solution}[chapter]
+\newtheorem{summary}[theorem]{Resumen}
+%\newenvironment{proof}[1][Demostraci\'on]{\textbf{#1.} }{\hfill{\ $\square$}}%{\hfill{\ \rule{0.5em}{0.5em}}}
+%--------------------------------------------------------------------------------------------------------
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{#1 }{}} 
+\renewcommand{\sectionmark}[1]{\markright{Title of the research}} 
+%\fancyhead[LE]{\footnotesize\textnormal{\thepage}\textit{ / \rightmark}} 
+%\fancyhead[RO]{\footnotesize\textit{\leftmark  / }\textnormal{\thepage}} 
+%\fancyfoot{}
+%\fancyhead[RO,LE]{\textnormal{\footnotesize \thepage /}} 
+%--------------------------------------------------------------------------------------------------------
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+}
+
+%--------------------------------------------------------------------------------------------------------
+\newenvironment{Proof}[1][\proofname]{%Se establece "Demostración" como encabezado, en itálica y subrayado
+  \proof[\normalfont\textbf{\underline{Demostration}}]%\newline
+}{\endproof}
+%--------------------------------------------------------------------------------------------------------
+\newtcolorbox{remarkbox}[2][]{%
+  empty,
+  breakable,
+  top=3mm,bottom=3mm,left=2mm,right=2mm,
+  toptitle=5mm,bottomtitle=1mm,
+  %title=\colorbox{yellow}{#2},
+  %coltitle=black,
+  %fonttitle=\bfseries,
+  underlay={%
+    \draw[Gray5,line width=1mm]
+      ([xshift=5mm,yshift=-0.5mm]frame.north west)--
+      ([xshift=0.5mm,yshift=-0.5mm]frame.north west)--
+      ([xshift=0.5mm,yshift=0.5mm]frame.south west)--
+      ([xshift=5mm,yshift=0.5mm]frame.south west)
+      ([xshift=-5mm,yshift=-0.5mm]frame.north east)--
+      ([xshift=-0.5mm,yshift=-0.5mm]frame.north east)--
+      ([xshift=-0.5mm,yshift=0.5mm]frame.south east)--
+      ([xshift=-5mm,yshift=0.5mm]frame.south east)
+      ;
+  },
+  % paragraph skips obeyed within tcolorbox
+  parbox=false,#1
+}
+%--------------------------------------------------------------------------------------------------------------------------------
+\addto\captionsspanish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {\huge Content}%Cambia el título de la ToC por "Content"
+}
+\setlength{\fboxsep}{10pt}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\renewcommand{\cftchapnumwidth}{4mm}
+\renewcommand{\cftchapaftersnum}{.}%
+
+\usepackage{titlesec}
+\titleformat
+{\chapter}%command
+[hang]%shape
+{\normalfont\bfseries\huge}%format
+{\fbox{\thechapter}}%label
+{-40pt}%sep
+{~\vspace{3mm}\linebreak}%before code
+[]%after code
+
+\titleformat
+{\section}
+{\normalfont\bfseries\Large}
+{\thesection.}
+{0pt}
+{\hspace{2mm}}
+{}%
+
+\titleformat
+{\subsection}
+{\normalfont\bfseries\large}
+{\thesubsection.}
+{0pt}
+{\hspace{2mm}}
+{}%
+
+
+\titlelabel{\thetitle.\quad}
+
+%\titlelabel{\thetitle \quad}
+
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+
+\renewcommand{\cftchapfont}{\normalfont\bfseries}%Fuente para los capítulos \cftXpagefont
+\renewcommand{\cftchappagefont}{\normalfont}%\cftXaftersnum
+\renewcommand{\cftdotsep}{2}
+\renewcommand{\cftchapaftersnum}{.}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+%--------------------------------------------------------------------------------------------------------
+\newcommand{\FirstPagesFormat}{
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\textsc{\thepage}} 
+\fancyhead[RO]{\textsc{\thepage}} 
+}
+
+\newcommand{\ChaptersFormat}{
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\footnotesize\textnormal{\thepage}\textit{ / Title of the research}} 
+\fancyhead[RO]{\footnotesize\textit{\leftmark  / }\textnormal{\thepage}} 
+}
+
+\newcommand{\AnexosFormat}{
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\footnotesize\textnormal{\thepage}\textit{ /Title of the research}} 
+\fancyhead[RO]{\footnotesize\textit{Annexes / }\textnormal{\thepage}} 
+}
+
+%--------------------------------------------------------------------------------------------------------
+% Codigo
+%--------------------------------------------------------------------------------------------------------
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+}

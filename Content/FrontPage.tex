@@ -1,0 +1,86 @@
+%--------------------------------------------------------------------------------------------------------------------------------
+% Formato utilizado en las páginas iniciales del libro, incluyendo:
+%	- Pagina del titulo.
+%	- Página de autores.
+%--------------------------------------------------------------------------------------------------------------------------------
+\pagenumbering{roman}% Enumerate first pages of the book with roman.
+%--------------------------------------------------------------------------------------------------------------------------------
+% Book Title Page
+%--------------------------------------------------------------------------------------------------------------------------------
+\leavevmode\thispagestyle{empty}\newpage
+\leavevmode\thispagestyle{empty}\newpage
+%--------------------------------------------------------------------------------------------------------------------------------
+\thispagestyle{empty}
+%--------------------------------------------------------------------------------------------------------------------------------
+\
+%\vspace{-10mm}
+%
+\begin{tikzpicture}[remember picture,overlay]
+%--------------------------------------------------------------------------------------------------------------------------------
+% In this node the used background image, with a gray box, is added.
+\node[inner sep=0] at (current page.center)
+{\includegraphics[width=\paperwidth,height=\paperheight]{Format_Figures/FrontPagev1.pdf}};
+%--------------------------------------------------------------------------------------------------------------------------------
+\end{tikzpicture}
+%
+\begin{center}
+%\begin{figure}[t!]
+%\centering%
+%\includegraphics[scale=0.2]{Figuras de Formato/Escudo.pdf}%
+%\end{figure}
+
+\vspace{1cm}
+%\vspace{-20mm}
+%\vspace*{0.1cm}
+\par\noindent\rule{\textwidth}{0.4pt}
+\vspace{-1mm}
+
+\textsc{\huge Title of the research}
+\vspace{1mm}
+
+\par\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{4cm}
+
+
+\large{
+% Aquí va el nombre y apellidos del autor
+\textsc{Student name}
+}\\[6.5cm]
+
+\large \textsc{University of Antioquia\\
+Faculty of Exact and Natural Sciences\\
+institute of mathematics\\
+Medellin Colombia}\\
+20--\\
+\end{center}
+
+%--------------------------------------------------------------------------------------------------------------------------------
+% Página de autores de libros.
+%--------------------------------------------------------------------------------------------------------------------------------
+\newpage{\pagestyle{empty}\cleardoublepage}
+\newpage
+\begin{center}
+\thispagestyle{empty} 
+\vspace*{-1cm}
+\textsc{\huge Title of the research}\\[2.0cm]
+\textsc{\large Student name\\[3.0cm]
+Degree work presented as a partial\linebreak
+requirement to qualify for the title of:\\
+Mathematician\\[3.0cm]
+Advisor:\\
+Advisor Name\\[2.5cm]
+%L\'{\i}nea de Investigación:\\
+%Dinámica poblacional\\
+%Grupo de Investigación:\\
+%Nombrar el grupo en caso que sea posible\\[2cm]
+University of Antioquia\\
+Faculty of Exact and Natural Sciences\\
+institute of mathematics\\
+Medellin Colombia\\
+20--}\\
+\end{center}
+%--------------------------------------------------------------------------------------------------------------------------------
+\newpage
+\leavevmode\thispagestyle{empty}\newpage
+%--------------------------------------------------------------------------------------------------------------------------------

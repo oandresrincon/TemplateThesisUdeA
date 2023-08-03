@@ -1,0 +1,81 @@
+%--------------------------------------------------------------------------------------------------------------------------------
+\chapter{Chapter title}
+%--------------------------------------------------------------------------------------------------------------------------------
+\lettrine[lines=2,loversize=0.15,nindent=0pt]{\bf \textcolor{myGris}{T}}{}his chapter demonstrates the method of \index{Gauss-Jordan reduction}Gauss-Jordan reduction in matrices for solving systems of linear equations. Then the operations between matrices and the inverse of a matrix are defined. The chapter ends with algorithms to calculate the (bilateral) inverse and the lateral inverses of a matrix.
+%--------------------------------------------------------------------------------------------------------------------------------
+% Chapter 1. Section 1.
+%--------------------------------------------------------------------------------------------------------------------------------
+\section{Definition}
+\begin{definition}
+
+A linear equation is an equation of the form $a_1x_1+\dots+a_nx_n=b$ with $a_1,\dots,a_m$ and $b$ real constants and $x_1,\dots,x_n$ the \index{Variables} variables or unknowns from the equation. In this case, the equation is said to be a linear equation in $n$ variables. The numbers $a_1,\dots,a_m$ are called the \index{Coefficients of a linear equation} coefficients of the equation, and the constant $b$ is called the independent term. A system of equations is a finite set of equations. According to this, a system of linear equations is a set of equations of the following form...
+
+\end{definition} 
+%--------------------------------------------------------------------------------------------------------------------------------
+% Chapter 1. Section 2.
+%--------------------------------------------------------------------------------------------------------------------------------
+% Example of the example format.
+%--------------------------------------------------------------------------------------------------------------------------------
+\section{Example}
+\begin{example}  
+There are several methods to solve this \index{Linear system}linear system, due to the similarity with the method of \index{Gauss-Jordan reduction}Gauss-Jordan reduction that will be exposed in this section, the elimination one stands out. This method uses three basic operations to find...
+\end{example}  
+%--------------------------------------------------------------------------------------------------------------------------------
+% Chapter 1. Section 3.
+%--------------------------------------------------------------------------------------------------------------------------------
+% Example of the theorem format.
+%--------------------------------------------------------------------------------------------------------------------------------
+\section{Theorem}
+\begin{tcolorbox}
+\begin{theorem} \label{T:primerteorema} 
+Any matrix, applying Gauss-Jordan reduction, can be brought to a reduced staggered form matrix.
+\end{theorem}
+\end{tcolorbox}%\vspace{-\baselineskip}
+%--------------------------------------------------------------------------------------------------------------------------------
+% Chapter 1. Section 4.
+%--------------------------------------------------------------------------------------------------------------------------------
+% Example of the Proof format.
+%--------------------------------------------------------------------------------------------------------------------------------
+\section{Proof}
+\begin{Proof}
+The proof is made by induction on the number of columns of $A$.
+\end{Proof}
+%--------------------------------------------------------------------------------------------------------------------------------
+% Chapter 1. Section 5.
+%--------------------------------------------------------------------------------------------------------------------------------
+% Example of the corollary format.
+%--------------------------------------------------------------------------------------------------------------------------------
+\section{Corollary}
+\begin{tcolorbox}
+\begin{corollary}  
+A \index{Linear system}linear system with more variables than equations ($n>m$) never has \index{Unique solution}unique solution.
+\end{corollary}%}}
+\end{tcolorbox}%\vspace{-\baselineskip}
+%--------------------------------------------------------------------------------------------------------------------------------
+% Chapter 1. Section 5.
+%--------------------------------------------------------------------------------------------------------------------------------
+% Example of the remark format.
+%--------------------------------------------------------------------------------------------------------------------------------
+\section{Observation}
+\begin{remark} The converses of the three statements of the previous theorem are also true. The section shows that the \index{Elementary row operation on matrices}elementary row operations are reversible, which allows applying elementary row operations to $A'$ until matrix $A$ is retrieved, which returns the system original.
+\end{remark}
+\begin{remarkbox}{}
+\begin{remark} The converses of the three statements of the previous theorem are also true. The section shows that the \index{Elementary row operation on matrices}elementary row operations are reversible, which allows applying elementary row operations to $A'$ until matrix $A$ is retrieved, which returns the system original.
+\end{remark}
+\end{remarkbox}
+%--------------------------------------------------------------------------------------------------------------------------------
+\lipsum[1-6]
+\subsection{Programs}
+
+\lipsum[1-6]
+
+\begin{tcolorbox}
+\vspace*{-3mm}
+\begin{programa}
+\begin{lstlisting}
+def hello_world():
+	print("Hello floating world!")
+\end{lstlisting}
+\end{programa}%}}
+\vspace*{-5mm}
+\end{tcolorbox}
